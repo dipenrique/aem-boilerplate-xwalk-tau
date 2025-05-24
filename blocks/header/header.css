@@ -1,9 +1,10 @@
-/* header and nav layout */
+/* header and nav layout - Tel Aviv University style */
 header .nav-wrapper {
   background-color: var(--background-color);
   width: 100%;
   z-index: 2;
   position: fixed;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 header nav {
@@ -15,7 +16,7 @@ header nav {
   align-items: center;
   gap: 0 24px;
   margin: auto;
-  max-width: 1248px;
+  max-width: var(--max-content-width);
   height: var(--nav-height);
   padding: 0 24px;
   font-family: var(--body-font-family);
@@ -28,6 +29,7 @@ header nav[aria-expanded='true'] {
     'tools tools' var(--nav-height) / auto 1fr;
   overflow-y: auto;
   min-height: 100dvh;
+  background-color: var(--background-color);
 }
 
 @media (width >= 900px) {
@@ -35,7 +37,7 @@ header nav[aria-expanded='true'] {
     display: flex;
     justify-content: space-between;
     gap: 0 32px;
-    max-width: 1264px;
+    max-width: var(--max-content-width);
     padding: 0 32px;
   }
 
@@ -138,15 +140,16 @@ header nav[aria-expanded='true'] .nav-hamburger-icon::after {
 /* brand */
 header .nav-brand {
   grid-area: brand;
-  flex-basis: 128px;
+  flex-basis: 200px;
   font-size: var(--heading-font-size-s);
   font-weight: 700;
   line-height: 1;
 }
 
 header nav .nav-brand img {
-  width: 128px;
-  height: auto;
+  width: auto;
+  height: 50px; /* Adjusted to match TAU logo height */
+  margin-top: 5px;
 }
 
 /* sections */
@@ -161,6 +164,8 @@ header nav[aria-expanded='true'] .nav-sections {
   display: block;
   visibility: visible;
   align-self: start;
+  padding-top: 20px;
+  border-top: 1px solid var(--accent-color);
 }
 
 header nav .nav-sections ul {
@@ -171,14 +176,19 @@ header nav .nav-sections ul {
 
 header nav .nav-sections ul > li {
   font-weight: 500;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--accent-color);
 }
 
 header nav .nav-sections ul > li > ul {
-  margin-top: 0;
+  margin-top: 10px;
+  padding-left: 20px;
 }
 
 header nav .nav-sections ul > li > ul > li {
   font-weight: 400;
+  padding: 8px 0;
+  border-bottom: none;
 }
 
 @media (width >= 900px) {
@@ -190,6 +200,8 @@ header nav .nav-sections ul > li > ul > li {
 
   header nav[aria-expanded='true'] .nav-sections {
     align-self: unset;
+    border-top: none;
+    padding-top: 0;
   }
 
   header nav .nav-sections .nav-drop {
@@ -227,42 +239,135 @@ header nav .nav-sections ul > li > ul > li {
   header nav .nav-sections .default-content-wrapper > ul > li {
     flex: 0 1 auto;
     position: relative;
+    padding: 0;
+    border-bottom: none;
+  }
+
+  header nav .nav-sections .default-content-wrapper > ul > li > a {
+    padding: 10px 0;
+    display: inline-block;
+    border-bottom: 3px solid transparent;
+    transition: border-color 0.3s ease;
+  }
+
+  header nav .nav-sections .default-content-wrapper > ul > li > a:hover {
+    border-bottom: 3px solid var(--primary-blue);
+    text-decoration: none;
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li > ul {
     display: none;
     position: relative;
+    margin-top: 0;
+    padding-left: 0;
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li[aria-expanded='true'] > ul {
     display: block;
     position: absolute;
     left: -24px;
-    width: 200px;
-    top: 150%;
+    width: 240px;
+    top: 100%;
     padding: 16px;
-    background-color: var(--light-color);
+    background-color: var(--background-color);
     white-space: initial;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-top: 3px solid var(--primary-blue);
+    z-index: 100;
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li > ul::before {
     content: '';
     position: absolute;
-    top: -8px;
-    left: 16px;
+    top: -10px;
+    left: 30px;
     width: 0;
     height: 0;
     border-left: 8px solid transparent;
     border-right: 8px solid transparent;
-    border-bottom: 8px solid var(--light-color);
+    border-bottom: 8px solid var(--primary-blue);
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li > ul > li {
     padding: 8px 0;
+    border-bottom: 1px solid var(--accent-color);
+  }
+  
+  header nav .nav-sections .default-content-wrapper > ul > li > ul > li:last-child {
+    border-bottom: none;
   }
 }
 
 /* tools */
 header nav .nav-tools {
   grid-area: tools;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Language switcher */
+.language-switcher {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.language-switcher a {
+  padding: 4px 8px;
+  font-size: var(--body-font-size-xs);
+  color: var(--dark-color);
+  border-radius: 3px;
+  transition: background-color 0.3s ease;
+}
+
+.language-switcher a:hover {
+  background-color: var(--accent-color);
+  text-decoration: none;
+}
+
+/* Search button */
+.search-button {
+  background: none;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  color: var(--dark-color);
+  margin: 0;
+}
+
+.search-button:hover {
+  color: var(--primary-blue);
+}
+
+/* Top utility links */
+.utility-links {
+  display: none;
+}
+
+@media (width >= 900px) {
+  .utility-links {
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 32px;
+    background-color: var(--primary-blue);
+    padding: 5px 15px;
+    border-radius: 0 0 5px 5px;
+  }
+  
+  .utility-links a {
+    color: white;
+    font-size: var(--body-font-size-xs);
+    padding: 0 10px;
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  
+  .utility-links a:last-child {
+    border-right: none;
+  }
+  
+  .utility-links a:hover {
+    text-decoration: underline;
+  }
 }

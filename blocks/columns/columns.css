@@ -1,3 +1,4 @@
+/* Columns styling based on Tel Aviv University website */
 .columns > div {
   display: flex;
   flex-direction: column;
@@ -5,29 +6,92 @@
 
 .columns img {
   width: 100%;
+  border-radius: var(--card-border-radius);
 }
 
 .columns > div > div {
   order: 1;
+  margin-bottom: 20px;
 }
 
 .columns > div > .columns-img-col {
   order: 0;
+  margin-bottom: 20px;
 }
 
 .columns > div > .columns-img-col img {
   display: block;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Column with background */
+.columns.has-background {
+  background-color: var(--light-color);
+  padding: 30px 0;
+  margin: 30px 0;
+}
+
+/* Column with border */
+.columns.has-border > div > div {
+  border: 1px solid var(--accent-color);
+  padding: 20px;
+  border-radius: var(--card-border-radius);
+}
+
+/* Column with highlight */
+.columns.highlight > div > div {
+  background-color: var(--primary-blue);
+  color: white;
+  padding: 20px;
+  border-radius: var(--card-border-radius);
+}
+
+.columns.highlight a:any-link {
+  color: white;
+  text-decoration: underline;
+}
+
+/* Feature columns - for statistics or key points */
+.columns.feature-columns > div > div {
+  text-align: center;
+  padding: 20px;
+}
+
+.columns.feature-columns .feature-number {
+  font-size: 36px;
+  font-weight: bold;
+  color: var(--primary-blue);
+  margin-bottom: 10px;
+}
+
+.columns.feature-columns .feature-title {
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
 @media (width >= 900px) {
   .columns > div {
-    align-items: center;
+    align-items: flex-start;
     flex-direction: unset;
-    gap: 24px;
+    gap: 32px;
   }
 
   .columns > div > div {
     flex: 1;
     order: unset;
+    margin-bottom: 0;
+  }
+  
+  .columns > div > .columns-img-col {
+    margin-bottom: 0;
+  }
+  
+  /* Alternate image position */
+  .columns.image-right > div > .columns-img-col {
+    order: 1;
+  }
+  
+  .columns.image-right > div > div:not(.columns-img-col) {
+    order: 0;
   }
 }
