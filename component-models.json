@@ -214,5 +214,126 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id": "news-item",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "title",
+        "value": "",
+        "label": "Title",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "date",
+        "value": "",
+        "label": "Date",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "description",
+        "value": "",
+        "label": "Description",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "link",
+        "value": "",
+        "label": "Link URL",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "category",
+        "value": "",
+        "label": "Category",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "event-item",
+    "fields": [
+      {
+        "component": "text",
+        "name": "title",
+        "value": "",
+        "label": "Event Title",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "date",
+        "value": "",
+        "label": "Event Date (DD/MM/YYYY)",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "time",
+        "value": "",
+        "label": "Event Time",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "location",
+        "value": "",
+        "label": "Event Location",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "description",
+        "value": "",
+        "label": "Event Description",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "link",
+        "value": "",
+        "label": "Event Link URL",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "social-link",
+    "fields": [
+      {
+        "component": "text",
+        "name": "platform",
+        "value": "",
+        "label": "Platform Name",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "url",
+        "value": "",
+        "label": "URL",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "icon",
+        "value": "",
+        "label": "Icon Name",
+        "valueType": "string",
+        "description": "Use: facebook, twitter, linkedin, instagram, youtube, whatsapp, tiktok, spotify"
+      }
+    ]
   }
 ]

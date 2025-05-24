@@ -15,7 +15,12 @@
       "hero",
       "cards",
       "columns",
-      "fragment"
+      "fragment",
+      "news-section",
+      "events-section",
+      "breadcrumbs",
+      "social-links",
+      "search"
     ]
   },
   {
@@ -37,6 +42,24 @@
       "image",
       "button",
       "title"
+    ]
+  },
+  {
+    "id": "news-section",
+    "components": [
+      "news-item"
+    ]
+  },
+  {
+    "id": "events-section",
+    "components": [
+      "event-item"
+    ]
+  },
+  {
+    "id": "social-links",
+    "components": [
+      "social-link"
     ]
   }
 ]
