@@ -1,0 +1,202 @@
+/* Events section styling based on Tel Aviv University website */
+.events-section {
+  padding: 20px 0;
+}
+
+.events-section-header {
+  margin-bottom: 30px;
+}
+
+.events-section-header h2 {
+  position: relative;
+  padding-bottom: 15px;
+  margin-bottom: 5px;
+  font-size: var(--heading-font-size-l);
+}
+
+.events-section-header h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background-color: var(--primary-blue);
+}
+
+.events-section-header p {
+  color: var(--dark-color);
+  font-size: var(--body-font-size-s);
+}
+
+/* Events container */
+.events-section-items {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Event item */
+.event-item {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-color);
+  border-radius: var(--card-border-radius);
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+@media (width >= 768px) {
+  .event-item {
+    flex-direction: row;
+  }
+}
+
+/* Event date display */
+.event-date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-blue);
+  color: white;
+  padding: 15px;
+  min-width: 100px;
+  text-align: center;
+}
+
+@media (width < 768px) {
+  .event-date {
+    padding: 10px;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+
+.event-date-day {
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.event-date-month {
+  font-size: var(--body-font-size-s);
+  text-transform: uppercase;
+  margin-top: 5px;
+}
+
+.event-date-year {
+  font-size: var(--body-font-size-xs);
+  margin-top: 2px;
+}
+
+/* Event content */
+.event-content {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.event-title {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: var(--heading-font-size-s);
+  line-height: 1.3;
+}
+
+.event-time-location {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 15px;
+  font-size: var(--body-font-size-xs);
+  color: var(--dark-color);
+}
+
+.event-time, .event-location {
+  display: flex;
+  align-items: center;
+}
+
+.event-time::before, .event-location::before {
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.event-time::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230066cc'%3E%3Cpath d='M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8zm.5-13H11v6l5.2 3.2.8-1.3-4.5-2.7V7z'/%3E%3C/svg%3E");
+}
+
+.event-location::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230066cc'%3E%3Cpath d='M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5c-1.4 0-2.5-1.1-2.5-2.5s1.1-2.5 2.5-2.5 2.5 1.1 2.5 2.5-1.1 2.5-2.5 2.5z'/%3E%3C/svg%3E");
+}
+
+.event-description {
+  color: var(--dark-color);
+  font-size: var(--body-font-size-s);
+  margin-bottom: 15px;
+}
+
+/* Event link */
+.event-link {
+  margin-top: auto;
+  text-align: right;
+}
+
+.event-link a {
+  color: var(--primary-blue);
+  text-decoration: none;
+  font-size: var(--body-font-size-s);
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+}
+
+.event-link a::after {
+  content: '→';
+  margin-left: 5px;
+  transition: transform 0.3s ease;
+}
+
+.event-link a:hover {
+  text-decoration: none;
+}
+
+.event-link a:hover::after {
+  transform: translateX(3px);
+}
+
+/* View all events link */
+.events-section-footer {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.events-section-footer a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--primary-blue);
+  color: white;
+  text-decoration: none;
+  border-radius: var(--button-border-radius);
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.events-section-footer a:hover {
+  background-color: var(--secondary-blue);
+  text-decoration: none;
+}

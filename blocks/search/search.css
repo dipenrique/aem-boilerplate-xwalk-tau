@@ -1,0 +1,228 @@
+/* Search styling based on Tel Aviv University website */
+.search-block {
+  position: relative;
+}
+
+/* Search form */
+.search-form {
+  display: flex;
+  align-items: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.search-input-wrapper {
+  position: relative;
+  flex-grow: 1;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 45px 12px 15px;
+  border: 1px solid var(--accent-color);
+  border-radius: var(--card-border-radius);
+  font-size: var(--body-font-size-s);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.2);
+}
+
+.search-button {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  padding: 5px;
+  margin: 0;
+  color: var(--dark-color);
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.search-button:hover {
+  color: var(--primary-blue);
+}
+
+.search-button svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+/* Search overlay */
+.search-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.search-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.search-overlay-container {
+  width: 80%;
+  max-width: 600px;
+  position: relative;
+}
+
+.search-overlay-input {
+  width: 100%;
+  padding: 15px 50px 15px 15px;
+  border: none;
+  border-radius: var(--card-border-radius);
+  font-size: var(--body-font-size-m);
+}
+
+.search-overlay-button {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--primary-blue);
+  font-size: 24px;
+  cursor: pointer;
+  padding: 5px;
+  margin: 0;
+}
+
+.search-overlay-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 5px;
+}
+
+/* Search results */
+.search-results {
+  margin-top: 30px;
+}
+
+.search-results-header {
+  margin-bottom: 20px;
+}
+
+.search-results-count {
+  font-size: var(--body-font-size-s);
+  color: var(--dark-color);
+}
+
+.search-results-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.search-result-item {
+  padding: 15px 0;
+  border-bottom: 1px solid var(--accent-color);
+}
+
+.search-result-item:last-child {
+  border-bottom: none;
+}
+
+.search-result-title {
+  margin: 0 0 10px;
+  font-size: var(--heading-font-size-s);
+}
+
+.search-result-title a {
+  color: var(--primary-blue);
+  text-decoration: none;
+}
+
+.search-result-title a:hover {
+  text-decoration: underline;
+}
+
+.search-result-excerpt {
+  font-size: var(--body-font-size-s);
+  color: var(--dark-color);
+  margin: 0 0 10px;
+}
+
+.search-result-url {
+  font-size: var(--body-font-size-xs);
+  color: var(--dark-color);
+}
+
+/* Search filters */
+.search-filters {
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.search-filter {
+  padding: 5px 15px;
+  background-color: var(--light-color);
+  border-radius: 20px;
+  font-size: var(--body-font-size-xs);
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.search-filter:hover,
+.search-filter.active {
+  background-color: var(--primary-blue);
+  color: white;
+}
+
+/* Pagination */
+.search-pagination {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.search-pagination-item {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: var(--body-font-size-s);
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.search-pagination-item:hover,
+.search-pagination-item.active {
+  background-color: var(--primary-blue);
+  color: white;
+}
+
+.search-pagination-prev,
+.search-pagination-next {
+  width: auto;
+  padding: 0 15px;
+  border-radius: 18px;
+}

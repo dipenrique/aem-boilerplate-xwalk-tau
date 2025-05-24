@@ -1,0 +1,93 @@
+/* Social links styling based on Tel Aviv University website */
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: var(--background-color);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+  background-color: var(--primary-blue);
+  transform: translateY(-3px);
+}
+
+.social-links svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+/* Dark background variant */
+.social-links.dark-bg a {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.social-links.dark-bg a:hover {
+  background-color: white;
+  color: var(--primary-blue);
+}
+
+/* Light background variant */
+.social-links.light-bg a {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: var(--primary-blue);
+}
+
+.social-links.light-bg a:hover {
+  background-color: var(--primary-blue);
+  color: white;
+}
+
+/* Larger size variant */
+.social-links.large a {
+  width: 48px;
+  height: 48px;
+}
+
+.social-links.large svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Smaller size variant */
+.social-links.small a {
+  width: 32px;
+  height: 32px;
+}
+
+.social-links.small svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* With labels variant */
+.social-links.with-labels {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.social-links.with-labels a {
+  width: auto;
+  height: auto;
+  border-radius: 4px;
+  padding: 8px 12px;
+  gap: 8px;
+}
+
+.social-links.with-labels .social-link-label {
+  display: inline-block;
+  font-size: var(--body-font-size-xs);
+}

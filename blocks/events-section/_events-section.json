@@ -1,0 +1,91 @@
+{
+  "definitions": [
+    {
+      "title": "Events Section",
+      "id": "events-section",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Events Section",
+              "filter": "events-section"
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": "Event Item",
+      "id": "event-item",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "Event Item",
+              "model": "event-item"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "event-item",
+      "fields": [
+        {
+          "component": "text",
+          "name": "title",
+          "value": "",
+          "label": "Event Title",
+          "valueType": "string"
+        },
+        {
+          "component": "text",
+          "name": "date",
+          "value": "",
+          "label": "Event Date (DD/MM/YYYY)",
+          "valueType": "string"
+        },
+        {
+          "component": "text",
+          "name": "time",
+          "value": "",
+          "label": "Event Time",
+          "valueType": "string"
+        },
+        {
+          "component": "text",
+          "name": "location",
+          "value": "",
+          "label": "Event Location",
+          "valueType": "string"
+        },
+        {
+          "component": "richtext",
+          "name": "description",
+          "value": "",
+          "label": "Event Description",
+          "valueType": "string"
+        },
+        {
+          "component": "text",
+          "name": "link",
+          "value": "",
+          "label": "Event Link URL",
+          "valueType": "string"
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "events-section",
+      "components": [
+        "event-item"
+      ]
+    }
+  ]
+}
